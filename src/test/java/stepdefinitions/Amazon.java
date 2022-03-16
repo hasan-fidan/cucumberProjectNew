@@ -3,6 +3,7 @@ package stepdefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.Keys;
 import pages.AmazonPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -20,9 +21,12 @@ public class Amazon {
 
     @And("{string} kelimesini arar")
     public void kelimesiniArar(String arg0) {
+        amazon.fieldkeywordsnput.sendKeys(arg0+ Keys.ENTER);
+
     }
 
     @Then("tarayiciyi kapatir")
     public void tarayiciyiKapatir() {
+        Driver.closeDriver();
     }
 }

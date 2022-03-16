@@ -1,7 +1,27 @@
 Feature: Amazon sayfasina gidilecek
 
-
-  Scenario: Amazon sayfasinda Java kelimesi arar.
+@smoke
+  Scenario Outline: Amazon sayfasinda kelimeleri arar.
     Given kullanici "amazon" sayfasina gider
-    And "Java" kelimesini arar
-    Then tarayiciyi kapatir
+    And "<masa>" kelimesini arar
+    When tarayiciyi kapatir
+
+
+
+    Examples:
+      |masa  |
+      |java  |
+      |masa  |
+      |kasa  |
+
+
+
+
+
+
+
+
+
+
+
+
